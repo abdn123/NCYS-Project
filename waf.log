@@ -1,0 +1,59 @@
+2023-04-25 14:23:03,143 - INFO - Starting WAF server on port 4444
+2023-04-25 14:25:36,099 - INFO - Starting WAF server on port 4444
+2023-04-25 14:27:26,200 - INFO - Starting WAF server on port 4444
+2023-04-25 14:32:49,920 - INFO - Starting WAF server on port 4444
+2023-04-25 14:45:51,805 - INFO - Starting WAF server on port 4444
+2023-04-25 14:47:56,327 - INFO - Starting WAF server on port 4444
+2023-04-25 15:01:09,097 - INFO - Starting WAF server on port 4444
+2023-04-25 15:01:36,630 - WARNING - Added 192.168.2.1 to blacklist.
+2023-04-25 15:02:00,205 - WARNING - Added 8.8.8.8 to Allowed IP.
+2023-04-25 15:10:22,086 - WARNING - Added 127.0.0.1 to blacklist.
+2023-04-25 16:20:16,794 - INFO - Starting WAF server on port 8888
+2023-04-25 16:20:20,411 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-04-25 16:20:32,800 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-04-25 16:20:36,266 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-04-25 16:23:34,368 - INFO - Starting WAF server on port 8888
+2023-04-25 16:23:36,964 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-04-25 16:25:29,417 - INFO - Starting WAF server on port 8888
+2023-04-25 16:25:37,768 - WARNING - Blocking request from blacklisted IP: 127.0.0.1
+2023-04-25 16:25:48,822 - WARNING - Blocking request from blacklisted IP: 127.0.0.1
+2023-04-25 16:26:30,866 - INFO - Starting WAF server on port 8888
+2023-04-25 16:30:18,773 - INFO - Starting WAF server on port 8888
+2023-04-25 16:30:29,386 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-04-25 16:31:05,199 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-04-25 16:31:07,999 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-04-25 16:31:25,779 - WARNING - Added 127.0.0.1 to blacklist.
+2023-04-25 16:31:30,458 - WARNING - Blocking request from blacklisted IP: 127.0.0.1
+2023-04-25 16:43:27,852 - INFO - Starting WAF server on port 8888
+2023-04-25 16:43:31,514 - WARNING - Blocking request from blacklisted IP: 127.0.0.1
+2023-04-25 16:43:33,457 - WARNING - Blocking request from blacklisted IP: 127.0.0.1
+2023-04-25 16:51:04,138 - WARNING - Blocking request from blacklisted IP: 127.0.0.1
+2023-04-25 16:51:20,388 - WARNING - Blocking request from blacklisted IP: 127.0.0.1
+2023-04-25 16:51:21,150 - WARNING - Blocking request from blacklisted IP: 127.0.0.1
+2023-04-25 16:51:27,242 - WARNING - Blocking request from blacklisted IP: 127.0.0.1
+2023-04-25 16:51:45,917 - INFO - Starting WAF server on port 8888
+2023-04-25 16:51:55,240 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-04-25 16:51:57,527 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-04-25 16:51:58,196 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-04-25 16:51:58,596 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-04-25 16:51:59,110 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-04-25 16:51:59,552 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-04-25 16:51:59,909 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-04-25 16:52:00,262 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-04-25 16:52:00,645 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-04-25 16:52:00,999 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-04-25 16:56:14,326 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-04-25 16:56:21,159 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-04-25 16:56:52,136 - INFO - Starting WAF server on port 8888
+2023-04-25 16:58:09,240 - INFO - Starting WAF server on port 8888
+2023-04-25 16:59:00,123 - INFO - Starting WAF server on port 8888
+2023-04-25 17:02:16,285 - INFO - Starting WAF server on port 8888
+2023-04-25 17:02:47,722 - INFO - Starting WAF server on port 8888
+2023-04-25 17:03:34,852 - INFO - Starting WAF server on port 8888
+2023-04-25 17:04:43,762 - INFO - Starting WAF server on port 8888
+2023-04-25 17:05:43,571 - INFO - Starting WAF server on port 8888
+2023-04-25 17:06:21,937 - INFO - Starting WAF server on port 8888
+2023-04-25 17:07:06,360 - INFO - Starting WAF server on port 8888
+2023-04-25 17:08:50,926 - INFO - Starting WAF server on port 8888
+2023-04-25 17:09:42,804 - INFO - Starting WAF server on port 8888
+2023-04-25 17:10:40,367 - INFO - Starting WAF server on port 8888
