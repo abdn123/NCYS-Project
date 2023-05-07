@@ -71,3 +71,101 @@
 2023-04-27 15:00:05,730 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
 2023-04-27 15:01:44,955 - INFO - Starting WAF server on port 4444
 2023-04-27 15:01:48,227 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-04-27 15:10:10,801 - INFO - Starting WAF server on port 4444
+2023-05-07 14:58:00,122 - INFO - Starting WAF server on port 4444
+2023-05-07 15:07:23,133 - INFO - Starting WAF server on port 4444
+2023-05-07 15:07:30,252 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-05-07 15:07:50,296 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-05-07 15:07:50,604 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-05-07 15:08:18,350 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-05-07 15:08:18,386 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-05-07 15:08:19,086 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-05-07 15:08:19,391 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-05-07 15:09:07,443 - INFO - Starting WAF server on port 4444
+2023-05-07 15:09:53,589 - INFO - Starting WAF server on port 4444
+2023-05-07 15:11:09,388 - WARNING - XSS payload detected: javascript:
+2023-05-07 15:15:49,755 - INFO - Starting WAF server on port 4444
+2023-05-07 15:15:57,412 - WARNING - XSS payload detected: %3Cscript%3E
+2023-05-07 15:16:16,367 - WARNING - XSS payload detected: %3C/script%3E
+2023-05-07 15:18:12,687 - INFO - Starting WAF server on port 4444
+2023-05-07 15:21:02,302 - INFO - Starting WAF server on port 4444
+2023-05-07 15:21:08,577 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-05-07 15:21:51,116 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-05-07 15:21:51,422 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-05-07 15:22:02,914 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-05-07 15:22:02,964 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-05-07 15:22:38,022 - INFO - Starting WAF server on port 4444
+2023-05-07 15:22:41,451 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-05-07 15:22:42,516 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-05-07 15:22:42,820 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-05-07 15:24:41,910 - INFO - Starting WAF server on port 4444
+2023-05-07 15:25:05,098 - INFO - Starting WAF server on port 4444
+2023-05-07 15:27:01,305 - WARNING - Added 127.0.0.1 to blacklist.
+2023-05-07 15:27:08,564 - WARNING - Blocking request from blacklisted IP: 127.0.0.1
+2023-05-07 15:27:08,606 - WARNING - Blocking request from blacklisted IP: 127.0.0.1
+2023-05-07 15:27:15,655 - WARNING - Blocking request from blacklisted IP: 127.0.0.1
+2023-05-07 15:27:15,966 - WARNING - Blocking request from blacklisted IP: 127.0.0.1
+2023-05-07 15:34:04,920 - WARNING - Blocking request from blacklisted IP: 127.0.0.1
+2023-05-07 15:34:05,526 - WARNING - Blocking request from blacklisted IP: 127.0.0.1
+2023-05-07 15:36:12,574 - WARNING - Blocking request from blacklisted IP: 127.0.0.1
+2023-05-07 15:36:13,676 - WARNING - Blocking request from blacklisted IP: 127.0.0.1
+2023-05-07 15:46:36,113 - INFO - Starting WAF server on port 4444
+2023-05-07 15:51:49,220 - INFO - Starting WAF server on port 4444
+2023-05-07 15:52:20,469 - INFO - Starting WAF server on port 4444
+2023-05-07 15:54:07,225 - INFO - Starting WAF server on port 4444
+2023-05-07 15:56:13,205 - INFO - Starting WAF server on port 4444
+2023-05-07 15:57:54,310 - INFO - Starting WAF server on port 4444
+2023-05-07 15:59:36,601 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-05-07 15:59:36,678 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-05-07 15:59:50,589 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-05-07 15:59:50,636 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-05-07 15:59:52,204 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-05-07 15:59:52,253 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-05-07 15:59:52,553 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-05-07 15:59:52,601 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-05-07 16:00:16,524 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-05-07 16:00:16,571 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-05-07 16:00:17,671 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-05-07 16:00:17,717 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-05-07 16:00:18,083 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-05-07 16:00:18,131 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-05-07 16:00:19,719 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-05-07 16:00:19,766 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-05-07 16:00:26,842 - INFO - Starting WAF server on port 4444
+2023-05-07 16:00:32,064 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-05-07 16:00:32,114 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-05-07 16:00:33,852 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-05-07 16:00:33,900 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-05-07 16:00:34,452 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-05-07 16:00:34,501 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-05-07 16:00:34,763 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-05-07 16:00:34,810 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-05-07 16:00:35,038 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-05-07 16:00:35,083 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-05-07 16:00:35,960 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-05-07 16:00:36,007 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-05-07 16:12:17,484 - INFO - Starting WAF server on port 4444
+2023-05-07 16:12:27,223 - WARNING - Blocking request from blacklisted IP: 127.0.0.1
+2023-05-07 16:12:27,273 - WARNING - Blocking request from blacklisted IP: 127.0.0.1
+2023-05-07 16:12:56,713 - WARNING - XSS payload detected: %3Cscript%3E
+2023-05-07 16:13:09,652 - WARNING - XSS payload detected: %3Cscript%3E
+2023-05-07 16:25:17,814 - INFO - Starting WAF server on port 4444
+2023-05-07 16:25:42,512 - WARNING - XSS payload detected: %3Ch1%3E
+2023-05-07 16:26:27,358 - INFO - Starting WAF server on port 4444
+2023-05-07 16:27:17,176 - INFO - Starting WAF server on port 4444
+2023-05-07 16:29:45,606 - INFO - Starting WAF server on port 4444
+2023-05-07 16:30:35,406 - INFO - Starting WAF server on port 4444
+2023-05-07 16:31:06,074 - INFO - Starting WAF server on port 4444
+2023-05-07 16:31:27,524 - INFO - Starting WAF server on port 4444
+2023-05-07 16:33:26,228 - INFO - Starting WAF server on port 4444
+2023-05-07 16:33:42,500 - INFO - Starting WAF server on port 4444
+2023-05-07 16:34:56,906 - INFO - Starting WAF server on port 4444
+2023-05-07 16:36:22,823 - INFO - Starting WAF server on port 4444
+2023-05-07 16:36:52,383 - INFO - Starting WAF server on port 4444
+2023-05-07 16:37:40,713 - INFO - Starting WAF server on port 4444
+2023-05-07 16:39:05,660 - INFO - Starting WAF server on port 4444
+2023-05-07 16:40:25,186 - INFO - Starting WAF server on port 4444
+2023-05-07 16:40:54,455 - INFO - Starting WAF server on port 4444
+2023-05-07 16:41:36,069 - INFO - Starting WAF server on port 4444
+2023-05-07 16:42:39,385 - INFO - Starting WAF server on port 4444
+2023-05-07 16:43:01,341 - WARNING - XSS payload detected: %3Ch1%3E
