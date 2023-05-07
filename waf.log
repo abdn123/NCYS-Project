@@ -169,3 +169,16 @@
 2023-05-07 16:41:36,069 - INFO - Starting WAF server on port 4444
 2023-05-07 16:42:39,385 - INFO - Starting WAF server on port 4444
 2023-05-07 16:43:01,341 - WARNING - XSS payload detected: %3Ch1%3E
+2023-05-07 18:37:15,832 - INFO - Starting WAF server on port 4444
+2023-05-07 18:37:47,914 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-05-07 18:37:47,958 - WARNING - Blocking request from IP: 127.0.0.1 due to rate limit threshold exceeded.
+2023-05-07 18:38:12,503 - INFO - Starting WAF server on port 4444
+2023-05-07 18:39:15,814 - INFO - Starting WAF server on port 4444
+2023-05-07 18:39:39,432 - WARNING - Blocking request from blacklisted IP: 127.0.0.1
+2023-05-07 18:39:39,469 - WARNING - Blocking request from blacklisted IP: 127.0.0.1
+2023-05-07 18:52:08,178 - INFO - Starting WAF server on port 4444
+2023-05-07 18:53:31,782 - INFO - Starting WAF server on port 4444
+2023-05-07 18:54:27,916 - INFO - Starting WAF server on port 4444
+2023-05-07 18:55:54,545 - INFO - Starting WAF server on port 4444
+2023-05-07 18:56:08,927 - WARNING - Blocking request from IP: 192.168.0.104 due to matching blocking rule.
+2023-05-07 18:56:17,296 - WARNING - Blocking request from IP: 192.168.0.104 due to matching blocking rule.

@@ -25,9 +25,9 @@ old_values = {
 request_counts = {}
 
 # define database name
-DATABASE_NAME = "D:\\University work\\6th Semester\\NCYS\\example.db"
+DATABASE_NAME = "example.db"
 
-logging.basicConfig(filename='D:\\University work\\6th Semester\\NCYS\\waf.log', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(filename='waf.log', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
 
 def is_ip_blacklisted(ip):
@@ -40,18 +40,9 @@ def add_to_blacklist(ip):
     old_values['BLACKLIST'].append(ip)
     logging.warning("Added {} to blacklist.".format(ip))
 
-def check_block_rules(port, mac, webpage):
-
-    if port in old_values['BLOCK_RULES']['port']:
-        logging.warning("Blocking request on port: {}".format(port))
-        return True
-
-    if mac in old_values['BLOCK_RULES']['mac']:
-        logging.warning("Blocking request from MAC address: {}".format(mac))
-        return True
-
-    if webpage in old_values['BLOCK_RULES']['webpage']:
-        logging.warning("Blocking request to webpage: {}".format(webpage))
+def check_block_rules(ip,url):
+    url=url[1:]
+    if ip in old_values['BLOCK_RULES']['ips'] and url in old_values['BLOCK_RULES']['webpage']:
         return True
 
     return False
@@ -96,12 +87,12 @@ class MyHTTPRequestHandler(BaseHTTPRequestHandler):
                 #     requested_page = parsed_url.path
                 #     print("Requested Page:", requested_page)
 
-                if check_block_rules(self.server.server_port, client_mac, self.headers.get('host')):
+                if check_block_rules(client_ip,self.path):
                     logging.warning("Blocking request from IP: {} due to matching blocking rule.".format(client_ip))
                     self.send_response(403)
                     self.send_header('Content-type', 'text/html')
                     self.end_headers()
-                    self.wfile.write(b'403 Forbidden - Request matches blocking rule.')
+                    self.wfile.write(b'403 Forbidden - Requested URL is not Allowed for your IP.')
                 else:
                     self.send_response(200)
                     self.send_header('Content-type', 'text/html')
@@ -147,7 +138,7 @@ class ThreadedHTTPServer(ThreadingMixIn, HTTPServer):
     pass
 
 def start_waf_server(port):
-    server_address = ("localhost", port)
+    server_address = ("0.0.0.0", port)
     httpd = ThreadedHTTPServer(server_address, MyHTTPRequestHandler)
     #httpd.socket = ssl.wrap_socket(httpd.socket, certfile='D:\\University work\\6th Semester\\NCYS\\server.pem', server_side=True, ssl_version=ssl.PROTOCOL_SSLv23)
     logging.info('Starting WAF server on port {}'.format(port))
@@ -160,7 +151,7 @@ def configure_waf_settings():
 
     
     config = configparser.ConfigParser()
-    config.read('D:\\University work\\6th Semester\\NCYS\\config.ini')
+    config.read('config.ini')
 
     # Get the old values from the config file if present
     if 'RATE_LIMIT_THRESHOLD' in config:
@@ -169,10 +160,9 @@ def configure_waf_settings():
         old_values['BLACKLIST'] = config['BLACKLIST']['ips']
         old_values['BLACKLIST'] = [ip.strip() for ip in old_values['BLACKLIST'].split(',')]
     if 'BLOCK_RULES' in config:
-        block_ports = [port.strip() for port in config['BLOCK_RULES']['ports'].split(',')]
-        block_macs = [mac.strip() for mac in config['BLOCK_RULES']['macs'].split(',')]
+        page_ips = [port.strip() for port in config['BLOCK_RULES']['ips'].split(',')]
         block_webpage = [webpage.strip() for webpage in config['BLOCK_RULES']['webpage'].split(',')]
-        old_values['BLOCK_RULES'] = {'port': block_ports, 'mac': block_macs, 'webpage': block_webpage}
+        old_values['BLOCK_RULES'] = {'ips': page_ips, 'webpage': block_webpage}
 
     while True:
         print("1. Configure Rate Limit threshold (Current value: {})".format(old_values['RATE_LIMIT_THRESHOLD']))
@@ -269,6 +259,7 @@ def configure_waf_settings():
             print("Configuration saved successfully.")
 
         elif choice == '6':
+            exit(0)
             return
 
         else:
