@@ -18,7 +18,7 @@ RATE_LIMIT_THRESHOLD = 0
 # Initialize a dictionary to store the old values
 old_values = {
     'RATE_LIMIT_THRESHOLD': RATE_LIMIT_THRESHOLD,
-    'BLOCK_RULES': {'port': [], 'mac': [], 'webpage': []},
+    'BLOCK_RULES': {'ips': [], 'webpage': []},
     'BLACKLIST': []
 }
 
@@ -40,11 +40,10 @@ def add_to_blacklist(ip):
     old_values['BLACKLIST'].append(ip)
     logging.warning("Added {} to blacklist.".format(ip))
 
-def check_block_rules(ip,url):
-    url=url[1:]
-    if ip in old_values['BLOCK_RULES']['ips'] and url in old_values['BLOCK_RULES']['webpage']:
+def check_block_rules(ip, url):
+    url = url[1:]
+    if ip in old_values['BLOCK_RULES']['ips'] or url in old_values['BLOCK_RULES']['webpage']:
         return True
-
     return False
 
 def filter_xss_payload(value):
@@ -80,19 +79,12 @@ class MyHTTPRequestHandler(BaseHTTPRequestHandler):
                 self.end_headers()
                 self.wfile.write(b'403 Forbidden - Rate limit threshold exceeded.')
             else:
-                
-                # referer = self.headers.get('Referer')
-                # if referer:
-                #     parsed_url = urlparse(referer)
-                #     requested_page = parsed_url.path
-                #     print("Requested Page:", requested_page)
-
-                if check_block_rules(client_ip,self.path):
+                if check_block_rules(client_ip, self.path):
                     logging.warning("Blocking request from IP: {} due to matching blocking rule.".format(client_ip))
                     self.send_response(403)
                     self.send_header('Content-type', 'text/html')
                     self.end_headers()
-                    self.wfile.write(b'403 Forbidden - Requested URL is not Allowed for your IP.')
+                    self.wfile.write(b'403 Forbidden - Requested URL is not allowed for your IP.')
                 else:
                     self.send_response(200)
                     self.send_header('Content-type', 'text/html')
@@ -124,13 +116,11 @@ class MyHTTPRequestHandler(BaseHTTPRequestHandler):
                         with sqlite3.connect(DATABASE_NAME) as conn:
                             c = conn.cursor()
                             c.execute("INSERT INTO users (name, age) VALUES (?, ?)",
-                                    (filtered_params.get("name", ""), filtered_params.get("age", "")))
+                                      (filtered_params.get("name", ""), filtered_params.get("age", "")))
                             conn.commit()
 
                     self.wfile.write(b'200 OK - Request allowed.')
 
-
-        
     def log_message(self, format, *args):
         return
 
@@ -189,17 +179,14 @@ def configure_waf_settings():
 
         elif choice == '3':
             current_value = old_values['BLOCK_RULES']
-            block_ports = input("Enter comma-separated list of ports to block (current value is {}): ".format(current_value['port']))
-            block_macs = input("Enter comma-separated list of MAC addresses to block (current value is {}): ".format(current_value['mac']))
+            block_ips = input("Enter comma-separated list of IPs to block (current value is {}): ".format(current_value['ips']))
             block_webpage = input("Enter comma-separated list of webpages to block (current value is {}): ".format(current_value['webpage']))
-            
-            # Create a new dictionary to store the updated blocking rules
-            new_block_rules = {'port': current_value['port'].copy(), 'mac': current_value['mac'].copy(), 'webpage': current_value['webpage'].copy()}
 
-            if block_ports:
-                new_block_rules['port'].extend([port.strip() for port in block_ports.split(',')])
-            if block_macs:
-                new_block_rules['mac'].extend([mac.strip() for mac in block_macs.split(',')])
+            # Create a new dictionary to store the updated blocking rules
+            new_block_rules = {'ips': current_value['ips'].copy(), 'webpage': current_value['webpage'].copy()}
+
+            if block_ips:
+                new_block_rules['ips'].extend([ip.strip() for ip in block_ips.split(',')])
             if block_webpage:
                 new_block_rules['webpage'].extend([webpage.strip() for webpage in block_webpage.split(',')])
 
@@ -226,8 +213,8 @@ def configure_waf_settings():
                     ip_to_remove = input("Enter the IP address to remove from the blacklist: ")
                     if ip_to_remove in old_values['BLACKLIST']:
                         old_values['BLACKLIST'].remove(ip_to_remove)
-                        config['BLACKLIST']['BLACKLIST'] = ','.join(old_values['BLACKLIST'])
-                        with open('D:\\University work\\6th Semester\\NCYS\\config.ini', 'w') as configfile:
+                        config['BLACKLIST']['ips'] = ','.join(old_values['BLACKLIST'])
+                        with open('config.ini', 'w') as configfile:
                             config.write(configfile)
                         print("IP address removed from the blacklist successfully.")
                     else:
@@ -237,11 +224,13 @@ def configure_waf_settings():
 
             elif remove_choice == '3':
                 if 'BLOCK_RULES' in config:
-                    block_type = input("Enter the type of data to remove (port/mac/webpage): ")
+                    block_type = input("Enter the type of data to remove (ips/webpage): ")
                     data_to_remove = input(f"Enter the {block_type} to remove: ")
                     if block_type in old_values['BLOCK_RULES'] and data_to_remove in old_values['BLOCK_RULES'][block_type]:
                         old_values['BLOCK_RULES'][block_type].remove(data_to_remove)
                         config['BLOCK_RULES'][block_type] = ','.join(old_values['BLOCK_RULES'][block_type])
+                        with open('config.ini', 'w') as configfile:
+                            config.write(configfile)
                         print(f"{block_type} removed successfully.")
                     else:
                         print(f"{block_type} not found in the blocking rules.")
@@ -251,20 +240,16 @@ def configure_waf_settings():
         elif choice == '5':
             config['RATE_LIMIT_THRESHOLD'] = {'threshold': str(old_values['RATE_LIMIT_THRESHOLD'])}
             config['BLACKLIST'] = {'ips': ','.join(old_values['BLACKLIST'])}
-            config['BLOCK_RULES'] = {'ports': ','.join(old_values['BLOCK_RULES']['port']),
-                                     'macs': ','.join(old_values['BLOCK_RULES']['mac']),
-                                     'webpage': ','.join(old_values['BLOCK_RULES']['webpage'])}
-            with open('D:\\University work\\6th Semester\\NCYS\\config.ini', 'w') as configfile:
+            config['BLOCK_RULES'] = {'ips': ','.join(old_values['BLOCK_RULES']['ips']), 'webpage': ','.join(old_values['BLOCK_RULES']['webpage'])}
+            with open('config.ini', 'w') as configfile:
                 config.write(configfile)
             print("Configuration saved successfully.")
 
         elif choice == '6':
-            exit(0)
-            return
+            return 
 
         else:
             print("Invalid choice. Please try again.")
-            
                 
 if __name__ == "__main__":
     waf_server = threading.Thread(target=start_waf_server, args=(4444,))
