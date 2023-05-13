@@ -42,7 +42,7 @@ def add_to_blacklist(ip):
 
 def check_block_rules(ip, url):
     url = url[1:]
-    if ip in old_values['BLOCK_RULES']['ips'] or url in old_values['BLOCK_RULES']['webpage']:
+    if ip in old_values['BLOCK_RULES']['ips'] and url in old_values['BLOCK_RULES']['webpage']:
         return True
     return False
 
@@ -246,6 +246,7 @@ def configure_waf_settings():
             print("Configuration saved successfully.")
 
         elif choice == '6':
+            exit(0)
             return 
 
         else:
@@ -253,6 +254,7 @@ def configure_waf_settings():
                 
 if __name__ == "__main__":
     waf_server = threading.Thread(target=start_waf_server, args=(4444,))
+    waf_server.daemon=True
     waf_server.start()
     configure_waf_settings()
     

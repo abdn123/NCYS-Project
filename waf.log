@@ -189,3 +189,20 @@
 2023-05-08 23:41:10,662 - WARNING - Blocking request from IP: 127.0.0.1 due to matching blocking rule.
 2023-05-08 23:42:49,354 - INFO - Starting WAF server on port 4444
 2023-05-08 23:43:29,486 - INFO - Starting WAF server on port 4444
+2023-05-13 20:20:00,732 - INFO - Starting WAF server on port 4444
+2023-05-13 20:20:30,208 - WARNING - Blocking request from blacklisted IP: 127.0.0.1
+2023-05-13 20:20:30,257 - WARNING - Blocking request from blacklisted IP: 127.0.0.1
+2023-05-13 20:20:34,759 - WARNING - Blocking request from IP: 192.168.0.104 due to matching blocking rule.
+2023-05-13 20:20:34,803 - WARNING - Blocking request from IP: 192.168.0.104 due to matching blocking rule.
+2023-05-13 20:20:54,310 - WARNING - Blocking request from IP: 192.168.0.104 due to matching blocking rule.
+2023-05-13 20:20:54,337 - WARNING - Blocking request from IP: 192.168.0.104 due to matching blocking rule.
+2023-05-13 20:20:56,712 - WARNING - Blocking request from IP: 192.168.0.104 due to matching blocking rule.
+2023-05-13 20:20:56,750 - WARNING - Blocking request from IP: 192.168.0.104 due to matching blocking rule.
+2023-05-13 20:21:24,601 - INFO - Starting WAF server on port 4444
+2023-05-13 20:21:31,348 - WARNING - Blocking request from IP: 192.168.0.104 due to matching blocking rule.
+2023-05-13 20:22:00,681 - WARNING - Blocking request from blacklisted IP: 127.0.0.1
+2023-05-13 20:22:00,837 - WARNING - Blocking request from blacklisted IP: 127.0.0.1
+2023-05-13 20:22:00,869 - WARNING - Blocking request from blacklisted IP: 127.0.0.1
+2023-05-13 20:22:36,197 - INFO - Starting WAF server on port 4444
+2023-05-13 20:26:12,680 - INFO - Starting WAF server on port 4444
+2023-05-13 20:33:31,454 - INFO - Starting WAF server on port 4444
